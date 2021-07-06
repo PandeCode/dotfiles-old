@@ -1,0 +1,1 @@
+source ~/dotfiles/envs.sh

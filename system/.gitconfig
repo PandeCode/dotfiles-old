@@ -1,0 +1,5 @@
+[user]
+	name = PandeCode
+	email = pandeshawnbenjamin@gmail.com
+[credential "https://github.com"]
+	helper = !gh auth git-credential
