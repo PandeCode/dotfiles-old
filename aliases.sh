@@ -6,7 +6,7 @@ alias cmc='rm -fr CMakeCache.txt cmake_install.cmake Makefile CMakeFiles Debug/ 
 alias chrome='google-chrome-stable --force-dark-mode'
 alias cs='xclip -selection clipboard -o'
 alias f=fuck
-alias goServer=goexec\ \'http.ListenAndServe\(`:8000`,\ http.FileServer\(http.Dir\(`.`\)\)\)
+alias goServer="goexec 'http.ListenAndServe(`:8000`, http.FileServer(http.Dir(`.`)))"
 alias idea='nvim /home/shawn/dev/ideas.txt'
 alias l='ls -latr'
 alias md=mkdir
@@ -18,5 +18,5 @@ alias sizeof='du -h --max-depth=0'
 alias sl=ls
 alias tcls='clear && tmux clear'
 alias tls='clear && tmux clear'
-alias tree=tree\ -I\ \"CMakeFiles\\\|node_modules\\\|cache\\\|test_\\\*\"
+alias tree='tree -I "CMakeFiles|node_modules|cache"'
 alias weather='curl wttr.in && curl "wttr.in?format=1" && curl "wttr.in?format=2"&& curl "wttr.in?format=3" && curl "wttr.in?format=4" && curl wttr.in/moon'
