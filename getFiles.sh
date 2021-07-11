@@ -14,8 +14,9 @@ ln -s ~/dotfiles/system/.sqliterc ~/.sqliterc
 ln -s ~/dotfiles/system/.vimrc ~/.vimrc
 ln -s ~/dotfiles/system/.Xresources ~/.Xresources
 
-rm -fr ~/.config/clangd ~/.config/fish ~/.config/fontconfig 
+rm -fr ~/.config/clangd ~/.config/fish ~/.config/fontconfig ~/.config/i3
 
 ln -s ~/dotfiles/config/fontconfig ~/.config/fontconfig
 ln -s ~/dotfiles/config/fish ~/.config/fish
 ln -s ~/dotfiles/config/clangd ~/.config/clangd
+ln -s ~/dotfiles/config/i3 ~/.config/i3
