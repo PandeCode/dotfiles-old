@@ -6,7 +6,6 @@ alias cmc='rm -fr CMakeCache.txt cmake_install.cmake Makefile CMakeFiles Debug/ 
 alias chrome='google-chrome-stable --force-dark-mode'
 alias cs='xclip -selection clipboard -o'
 alias f=fuck
-alias goServer="goexec 'http.ListenAndServe(`:8000`, http.FileServer(http.Dir(`.`)))"
 alias idea='nvim /home/shawn/dev/ideas.txt'
 alias l='ls -latr'
 alias md=mkdir
