@@ -1,1 +1,1 @@
-source ~/dotfiles/envs.sh
+source ~/dotfiles/extras/envs.sh

@@ -142,6 +142,6 @@ ex ()
 
 eval "$(starship init bash)"
 
-source ~/dotfiles/envs.sh
-source ~/dotfiles/aliases.sh
-source ~/dotfiles/functions.sh
+source ~/dotfiles/extras/envs.sh
+source ~/dotfiles/extras/aliases.sh
+source ~/dotfiles/extras/functions.sh
