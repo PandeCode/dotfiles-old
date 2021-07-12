@@ -49,6 +49,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindcode $mod+68 exec light -U 5
+bindcode $mod+69 exec light -A 5
+
 bindsym $mod+b exec chrome
 
 # start dmenu (a program launcher)
