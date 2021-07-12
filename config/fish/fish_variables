@@ -17,7 +17,7 @@ SETUVAR _fish_abbr_cmclean:rm\x20\x2dfr\x20CMakeCache\x2etxt\x20cmake_install\x2
 SETUVAR _fish_abbr_cmg:cmake\x20\x2dD\x20CMAKE_EXPORT_COMPILE_COMMANDS\x3dON\x20\x2dS\x20\x2e\x20\x2dB\x20Debug\x20\x26\x26\x20ln\x20\x2ds\x20\x2e/Debug/compile_commands\x2ejson\x20\x2e/compile_commands\x2ejson
 SETUVAR _fish_abbr_codedir:cd\x20/run/media/shawn/98D604E6D604C68A/Users/HP/Desktop/Desktop/Coding/
 SETUVAR _fish_abbr_cs:xclip\x20\x2dselection\x20clipboard\x20\x2do
-SETUVAR _fish_abbr_d:\x26\x20disown
+SETUVAR _fish_abbr_d:\x20disown
 SETUVAR _fish_abbr_explorer:dolphin
 SETUVAR _fish_abbr_f:fuck
 SETUVAR _fish_abbr_goServer:goexec\x20\x27http\x2eListenAndServe\x28\x60\x3a8000\x60\x2c\x20http\x2eFileServer\x28http\x2eDir\x28\x60\x2e\x60\x29\x29\x29
