@@ -11,5 +11,4 @@ cd ~/dotfiles
 rm ~/.tmux/tmux.conf
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux/tmux.conf
 
-
 cd $currDir
