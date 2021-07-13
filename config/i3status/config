@@ -6,12 +6,13 @@ color_degraded = "#F1FA8C"
 color_bad = "#FF5555"
 }
 
-order += "disk /"
+order += "async_script"
 order += "wireless wlo1"
 order += "battery 0"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
+order += "disk /"
 order += "load"
 order += "volume master"
 order += "time"
@@ -69,4 +70,8 @@ volume master {
         device = "default"
         mixer = "Master"
         mixer_idx = 0
+}
+async_script {
+  format = "{output}"
+  script_path = "/home/shawn/.config/i3status/getPing.sh"
 }
