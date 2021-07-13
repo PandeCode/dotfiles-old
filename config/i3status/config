@@ -39,14 +39,14 @@ format = "%5min"
 cpu_temperature 0 {
 format = "%degrees°C"
 max_threshold= 42
-format_above_threshold= "C: %degrees °C"
+format_above_threshold= "CPU: %degrees °C"
 }
 
 cpu_usage {
 format = "C : %usage : %cpu0 %cpu1 %cpu2 %cpu3"
 max_threshold= 75
 degraded_threshold = 25
-format_above_degraded_threshold = "CPU: %free"
+format_above_degraded_threshold = "CPU: %usage"
 }
 
 memory {
