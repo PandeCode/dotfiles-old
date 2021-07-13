@@ -6,28 +6,19 @@ color_degraded = "#F1FA8C"
 color_bad = "#FF5555"
 }
 
-#order += "ipv6"
 order += "disk /"
-#order += "run_watch DHCP"
-#order += "run_watch VPNC"
-#order += "path_exists VPN"
 order += "wireless wlo1"
-#order += "ethernet eth0"
 order += "battery 0"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
 order += "load"
+order += "volume master"
 order += "time"
 
 wireless wlo1 {
-format_up = "W: (%quality at %essid, %bitrate) %ip"
-format_down = "W: down"
-}
-
-ethernet eth0 {
-format_up = "E: %ip (%speed)"
-format_down = "E: down"
+format_up = "%quality %essid %bitrate"
+format_down = "offline"
 }
 
 battery 0 {
@@ -40,33 +31,22 @@ status_full = "☻ FULL"
 path = "/sys/class/power_supply/BAT1/uevent"
 low_threshold = 10
 }
-run_watch DHCP {
-pidfile = "/var/run/dhclient*.pid"
-}
-
-run_watch VPNC {
-# file containing the PID of a vpnc process
-pidfile = "/var/run/vpnc/pid"
-}
-
-path_exists VPN {
-# path exists when a VPN tunnel launched by nmcli/nm-applet is active
-path = "/proc/sys/net/ipv4/conf/tun0"
-}
 
 load {
 format = "%5min"
 }
 
 cpu_temperature 0 {
-format = "T: %degrees °C"
-path = "/sys/devices/platform/coretemp.0/temp1_input"
+format = "%degrees°C"
+max_threshold= 42
+format_above_threshold= "C: %degrees °C"
 }
 
 cpu_usage {
 format = "C : %usage : %cpu0 %cpu1 %cpu2 %cpu3"
-#degraded_threshold = "%used"
-#format_degraded = "CPU: %free"
+max_threshold= 75
+degraded_threshold = 25
+format_above_degraded_threshold = "CPU: %free"
 }
 
 memory {
@@ -81,4 +61,12 @@ format = "%free"
 
 read_file uptime {
 path = "/proc/uptime"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
