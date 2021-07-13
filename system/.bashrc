@@ -145,3 +145,4 @@ eval "$(starship init bash)"
 source ~/dotfiles/extras/envs.sh
 source ~/dotfiles/extras/aliases.sh
 source ~/dotfiles/extras/functions.sh
+source ~/dotfiles/extras/dracula-tty.sh
