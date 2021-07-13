@@ -22,7 +22,8 @@ exec --no-startup-id picom -CGb
 #exec --no-startup-id $HOME/.config/polybar/launch.sh
 bar {
     #i3bar_command $HOME/.config/polybar/launch.sh
-	status_command i3status
+	#status_command i3status
+	status_command py3status
 	position top
   colors {
     background #282A36
