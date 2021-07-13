@@ -16,6 +16,7 @@ SETUVAR _fish_abbr_cmc:rm\x20\x2dfr\x20CMakeCache\x2etxt\x20cmake_install\x2ecma
 SETUVAR _fish_abbr_cmclean:rm\x20\x2dfr\x20CMakeCache\x2etxt\x20cmake_install\x2ecmake\x20Makefile\x20CMakeFiles\x20Debug/\x20compile_commands\x2ejson\x20build
 SETUVAR _fish_abbr_cmg:cmake\x20\x2dD\x20CMAKE_EXPORT_COMPILE_COMMANDS\x3dON\x20\x2dS\x20\x2e\x20\x2dB\x20Debug\x20\x26\x26\x20ln\x20\x2ds\x20\x2e/Debug/compile_commands\x2ejson\x20\x2e/compile_commands\x2ejson
 SETUVAR _fish_abbr_codedir:cd\x20/run/media/shawn/98D604E6D604C68A/Users/HP/Desktop/Desktop/Coding/
+SETUVAR _fish_abbr_commit:git\x20commit\x20\x2dam\x20\x22
 SETUVAR _fish_abbr_cs:xclip\x20\x2dselection\x20clipboard\x20\x2do
 SETUVAR _fish_abbr_d:\x20disown
 SETUVAR _fish_abbr_explorer:dolphin
@@ -29,6 +30,7 @@ SETUVAR _fish_abbr_neovide:neovide\x20\x26\x20disown
 SETUVAR _fish_abbr_pacman:sudo\x20pacman
 SETUVAR _fish_abbr_pamac:sudo\x20pamac
 SETUVAR _fish_abbr_pipUpdate:pip3\x20list\x20\x2d\x2doutdated\x20\x7c\x20grep\x20\x2dv\x20\x27Package\x27\x20\x7c\x20grep\x20\x2dv\x20\x27\x5c\x2d\x2d\x2d\x2d\x27\x20\x7c\x20grep\x20\x2dEo\x20\x27\x5e\x5b\x5e\x20\x5d\x2b\x27\x20\x7c\x20xargs\x20\x2dt\x20pip3\x20install\x20\x2d\x2dupgrade
+SETUVAR _fish_abbr_push:git\x20push
 SETUVAR _fish_abbr_py:python3
 SETUVAR _fish_abbr_sizeof:du\x20\x2dh\x20\x2d\x2dmax\x2ddepth\x3d0
 SETUVAR _fish_abbr_sl:ls
