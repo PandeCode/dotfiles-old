@@ -14,10 +14,11 @@ order += "disk /"
 order += "wireless wlo1"
 #order += "ethernet eth0"
 order += "battery 0"
+order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
 order += "load"
-order += "tztime local"
+order += "time"
 
 wireless wlo1 {
 format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -53,11 +54,6 @@ path_exists VPN {
 path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
-tztime local {
-format = "%Y-%m-%d %H:%M:%S"
-hide_if_equals_localtime = true
-}
-
 load {
 format = "%5min"
 }
@@ -65,6 +61,12 @@ format = "%5min"
 cpu_temperature 0 {
 format = "T: %degrees °C"
 path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+cpu_usage {
+format = "C : %usage : %cpu0 %cpu1 %cpu2 %cpu3"
+#degraded_threshold = "%used"
+#format_degraded = "CPU: %free"
 }
 
 memory {
