@@ -1,0 +1,3 @@
+#!/bin/sh -e
+chmod 777 /sys/class/backlight/intel_backlight/brightness
+exit 0
