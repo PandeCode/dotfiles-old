@@ -36,10 +36,10 @@ format = "%5min"
 }
 
 cpu_usage {
-format = "C:%usage:%cpu0%cpu1%cpu2%cpu3"
+format = "%usage:%cpu0%cpu1%cpu2%cpu3"
 max_threshold= 75
 degraded_threshold = 25
-format_above_degraded_threshold = "CPU: %usage"
+format_above_degraded_threshold = "CPU:%usage:%cpu0%cpu1%cpu2%cpu3"
 }
 
 memory {

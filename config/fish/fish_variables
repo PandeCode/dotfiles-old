@@ -43,7 +43,6 @@ SETUVAR _fish_abbr_sudo:sudo\x20\x2dE
 SETUVAR _fish_abbr_tcls:clear\x20\x26\x26\x20tmux\x20clear
 SETUVAR _fish_abbr_tls:clear\x20\x26\x26\x20tmux\x20clear
 SETUVAR _fish_abbr_tree:tree\x20\x2dC\x20\x2dI\x20\x22CMakeFiles\x7cnode_modules\x7ccache\x22
-SETUVAR _fish_abbr_unityDocs:cd\x20/home/shawn/Unity/Hub/Editor/2021\x2e1\x2e6f1/Editor/Data/Documentation/Documentation/en
 SETUVAR _fish_abbr_weather:curl\x20wttr\x2ein\x20\x26\x26\x20curl\x20\x22wttr\x2ein\x3fformat\x3d1\x22\x20\x26\x26\x20curl\x20\x22wttr\x2ein\x3fformat\x3d2\x22\x26\x26\x20curl\x20\x22wttr\x2ein\x3fformat\x3d3\x22\x20\x26\x26\x20curl\x20\x22wttr\x2ein\x3fformat\x3d4\x22\x20\x26\x26\x20curl\x20wttr\x2ein/moon
 SETUVAR fish_color_autosuggestion:7596E4
 SETUVAR fish_color_cancel:\x2dr
