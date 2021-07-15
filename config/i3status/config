@@ -6,14 +6,13 @@ color_degraded = "#F1FA8C"
 color_bad = "#FF5555"
 }
 
-order += "wireless wlo1"
-order += "battery 0"
+order += "load"
 order += "cpu_usage"
-order += "cpu_temperature 0"
 order += "memory"
 order += "disk /"
-order += "load"
 order += "volume master"
+order += "wireless wlo1"
+order += "battery 0"
 order += "time"
 
 wireless wlo1 {
@@ -24,10 +23,10 @@ format_down = "offline"
 battery 0 {
 format = "%status %percentage %remaining %emptytime"
 format_down = "Can't read battery"
-status_chr = "⚡ CHR"
-status_bat = "🔋 BAT"
-status_unk = "? UNK"
-status_full = "☻ FULL"
+status_chr = "⚡"
+status_bat = "🔋"
+status_unk = "?"
+status_full = "☻"
 path = "/sys/class/power_supply/BAT1/uevent"
 low_threshold = 10
 }
@@ -36,32 +35,26 @@ load {
 format = "%5min"
 }
 
-cpu_temperature 0 {
-format = "%degrees°C"
-max_threshold= 42
-format_above_threshold= "CPU: %degrees °C"
-}
-
 cpu_usage {
-format = "C : %usage : %cpu0 %cpu1 %cpu2 %cpu3"
+format = "C:%usage:%cpu0%cpu1%cpu2%cpu3"
 max_threshold= 75
 degraded_threshold = 25
 format_above_degraded_threshold = "CPU: %usage"
 }
 
 memory {
-format = "%used"
+format = "M:%used/%total:%free"
 threshold_degraded = "10%"
-format_degraded = "MEMORY: %free"
+format_degraded = "MEM: %used-%total:%free"
 }
 
 disk "/" {
 format = "%free"
 }
 
-read_file uptime {
-path = "/proc/uptime"
-}
+#read_file uptime {
+#path = "/proc/uptime"
+#}
 
 volume master {
         format = "♪: %volume"
