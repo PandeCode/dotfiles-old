@@ -59,6 +59,7 @@ bindsym XF86AudioPrev exec playerctl previous
 floating_modifier $mod
 
 # start a terminal
+exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal; workspace 1'
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -120,16 +121,27 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 "1 Web"
+set $ws2 "2 Term"
+set $ws3 "3 IDE"
+set $ws4 "4 Engine"
+set $ws5 "5 Music"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# Assign Workspaces:
+assign [class="Google-Chrome"] $ws1
+#assign [class="google-chrome"] $ws1
+assign [class="Navigator"] $ws1
+#assign [class="firefoxdeveloperedition"]  $ws1
+
+#for window [class="google-chrome"] move container to workspace number $ws1
+#for window [class="Google-Chrome"] move container to workspace number $ws1
+#for_window [class="Navigator"] move container to workspace number $ws1
+#for_window [class="firefoxdeveloperedition"] move container to workspace number $ws1
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
