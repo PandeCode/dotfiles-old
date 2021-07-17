@@ -59,7 +59,7 @@ bindsym XF86AudioPrev exec playerctl previous
 floating_modifier $mod
 
 # start a terminal
-exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal; workspace 1'
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; workspace 1'
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
