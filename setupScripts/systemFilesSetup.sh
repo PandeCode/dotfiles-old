@@ -14,3 +14,10 @@ ln -s ~/dotfiles/system/.sqliterc ~/.sqliterc
 ln -s ~/dotfiles/system/.vimrc ~/.vimrc
 ln -s ~/dotfiles/system/.Xresources ~/.Xresources
 ln -s ~/dotfiles/system/.gtkrc-2.0 ~/.gtkrc-2.0
+
+rm -f /usr/bin/autostart.sh
+ln -s ~/dotfiles/extras/autostart.sh /usr/bin/autostart.sh
+rm -f /lib/systemd/system/autostart.service
+ln -s ~/dotfiles/extras/autostart.service /lib/systemd/system/autostart.service
+
+sudo systemctl enable autostart
