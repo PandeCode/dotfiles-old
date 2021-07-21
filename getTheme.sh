@@ -1,5 +1,10 @@
 #!/bin/bash
-cwd=$(pwd)
+pushd
+
+mkdir -p ~/dotfiles/config/alacritty
+cd ~/dotfiles/config/alacritty
+rm -f dracula.yml
+wget https://raw.githubusercontent.com/dracula/alacritty/master/dracula.yml
 
 # Qt5
 mkdir -p ~/.config/qt5ct/colors/
@@ -26,4 +31,4 @@ rm -f Dracula.zip
 
 gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 
-cd $cwd
+popd
