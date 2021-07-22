@@ -6,6 +6,9 @@ shell:
 
 import:
     - ~/dotfiles/config/alacritty/dracula.yml
+
+env:
+    TERM: xterm-256color
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
