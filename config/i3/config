@@ -76,6 +76,7 @@ bindsym $mod+Shift+q kill
 bindsym $alt+F4 kill
 
 bindsym $mod+b exec chrome
+bindsym $mod+n exec ~/.config/i3/newWorkspace.sh
 
 # change focus
 bindsym $mod+h focus left
