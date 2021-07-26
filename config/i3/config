@@ -8,25 +8,34 @@ font pango:monospace 8
 # This font is widely installed, provides lots of unicode glyphs, right-to-left text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:FiraCode Nerd Font 8
 
+ipc-socket ~/.i3/i3-ipc.sock
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Clipboard manager
 exec --no-startup-id clipit
+
+# Alt tab
 exec —-no-startup-id alttab
+
+# Bluelight filter detection
+exec —-no-startup-id xflux -l 0
 
 exec --no-startup-id $HOME/.config/i3/background.sh
 
 # Start compositor
-exec --no-startup-id picom -CGb
+exec --no-startup-id picom -b
 
 # Bar
 #exec --no-startup-id $HOME/.config/polybar/launch.sh
 bar {
     #i3bar_command $HOME/.config/polybar/launch.sh
 	#status_command i3status
-	status_command py3status
+	status_command py3status 
 	position top
   colors {
     background #282A36
