@@ -19,3 +19,6 @@ alias tcls='clear && tmux clear'
 alias tls='clear && tmux clear'
 alias tree='tree -I "CMakeFiles|node_modules|cache"'
 alias weather='curl wttr.in && curl "wttr.in?format=1" && curl "wttr.in?format=2"&& curl "wttr.in?format=3" && curl "wttr.in?format=4" && curl wttr.in/moon'
+
+alias browsePackages="yay -Slq | fzf --preview 'yay -Si {}' --layout=reverse"
+alias browseInstalledPackages="yay -Qq | fzf --preview 'yay -Qil {}' --layout=reverse --bind 'enter:execute(yay -Qil {} | less)'"
