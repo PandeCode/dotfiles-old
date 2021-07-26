@@ -23,18 +23,6 @@ cd ~/.config/qt5ct/colors/
 rm -f Dracula.conf
 wget https://raw.githubusercontent.com/dracula/qt5/master/Dracula.conf
 
-# GTK
-rm -rf /usr/share/themes/Ant-Dracula
-mkdir -p ~/.themes/
-cd ~/.themes/
-wget https://github.com/dracula/gtk/archive/master.zip
-7z x master.zip
-mv gtk-master /usr/share/themes/Ant-Dracula
-rm -f master.zip
-
-gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
-gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
-
 # Icons
 mkdir -p ~/.icons/
 cd ~/.icons/
