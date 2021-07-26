@@ -1,6 +1,17 @@
 #!/bin/bash
 pushd
 
+# bool function to test if the user is root or not (POSIX only)
+is_user_root() { [ "$(id -u)" -eq 0 ]; }
+
+if is_user_root; then
+        echo 'You are the almighty root!'
+        #exit 0 # implicit, here it serves the purpose to be explicit for the reader
+else
+        echo 'You are just an ordinary user.' >&2
+        exit 1
+fi
+
 mkdir -p ~/dotfiles/config/alacritty
 cd ~/dotfiles/config/alacritty
 rm -f dracula.yml
@@ -13,10 +24,12 @@ rm -f Dracula.conf
 wget https://raw.githubusercontent.com/dracula/qt5/master/Dracula.conf
 
 # GTK
+rm -rf /usr/share/themes/Ant-Dracula
 mkdir -p ~/.themes/
 cd ~/.themes/
 wget https://github.com/dracula/gtk/archive/master.zip
 7z x master.zip
+mv gtk-master /usr/share/themes/Ant-Dracula
 rm -f master.zip
 
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
