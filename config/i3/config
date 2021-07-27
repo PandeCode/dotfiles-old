@@ -61,6 +61,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Touchpad controls
+bindsym F5 exec $HOME/.config/i3/toggletouchpad.sh # toggle touchpad
+
 bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
 bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
 
@@ -68,8 +71,7 @@ bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
 bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'" 
 bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
 
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
