@@ -3,3 +3,5 @@
 	email = pandeshawnbenjamin@gmail.com
 [credential "https://github.com"]
 	helper = !gh auth git-credential
+[alias]
+	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
