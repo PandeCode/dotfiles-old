@@ -16,6 +16,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 bindsym $mod+Escape exec conky
 
+exec --no-startup-id i3-msg "workspace $ws1; exec /usr/bin/google-chrome"
+exec --no-startup-id i3-msg "workspace $ws2; exec i3-sensible-terminal"
+
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
 exec —-no-startup-id alttab
@@ -50,6 +53,7 @@ bar {
 }
 
 
+bindsym $mod+q exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
 bindsym $mod+Tab exec rofi -show window
 bindsym $alt+F2 exec dmenu_run
 
@@ -61,7 +65,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Touchpad controls
-bindsym F5 exec $HOME/.config/i3/toggletouchpad.sh # toggle touchpad
+#bindsym F5 exec $HOME/.config/i3/toggletouchpad.sh # toggle touchpad
 
 bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
 bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots

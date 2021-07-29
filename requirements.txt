@@ -77,6 +77,7 @@ fastapi==0.67.0
 filelock==3.0.12
 fire==0.4.0
 flake8==3.9.2
+flashfocus==2.2.3
 Flask==2.0.1
 Flask-Compress==1.10.1
 Flask-Session==0.4.0
@@ -112,6 +113,7 @@ httpx==0.18.2
 humanfriendly==9.2
 hurry.filesize==0.9
 hyperframe==6.0.1
+i3ipc==2.2.1
 identify==2.2.11
 idna==3.2
 imageio==2.9.0
@@ -155,6 +157,7 @@ lutris==0.5.8.4
 lxml==4.6.3
 Markdown==3.3.4
 MarkupSafe==2.0.1
+marshmallow==3.13.0
 matplotlib==3.4.2
 matplotlib-inline==0.1.2
 mccabe==0.6.1
@@ -368,6 +371,8 @@ Werkzeug==2.0.1
 widgetsnbextension==3.5.1
 wpm==1.51.5
 wrapt==1.12.1
+xcffib==0.11.1
+xpybutil==0.0.6
 yapf==0.31.0
 youtube-dl==2021.6.6
 youtube-search-python==1.4.6
