@@ -10,7 +10,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 export PYTHON_PATH=$HOME/dev/python/PYTHON_PATH
 
 export YARN_BIN=$HOME/.yarn/bin
-export PERSONAL_PATH=$HOME/dev/PERSONAL_PATH
+export PERSONAL_PATH=$HOME/dotfiles/PERSONAL_PATH
 export RUBY_GEM_BIN_PATH=$HOME/.local/share/gem/ruby/3.0.0/bin
 
 export PATH=$PERSONAL_PATH:$YARN_BIN:$PATH:$RUBY_GEM_BIN_PATH

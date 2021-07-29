@@ -1,0 +1,64 @@
+#!/bin/python3
+import os, sys
+
+# dbus-bindings
+dbus = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."
+bindings = {
+    "play": "Play",
+    "pause": "Pause",
+    "toggle": "PlayPause",
+    "next": "Next",
+    "previous": "Previous",
+    "loadTrack": "OpenUri string:spotify:track:",  # append track
+    "loadAlbum": "OpenUri string:spotify:album:",  # append album
+    "loadArtist": "OpenUri string:spotify:artist:",  # append artist
+}
+
+
+class spotify:
+    @classmethod
+    def play(self):
+        os.system(dbus + bindings["play"])
+
+    @classmethod
+    def pause(self):
+        os.system(dbus + bindings["pause"])
+
+    @classmethod
+    def toggle(self):
+        os.system(dbus + bindings["toggle"])
+
+    @classmethod
+    def next(self):
+        os.system(dbus + bindings["next"])
+
+    @classmethod
+    def previous(self):
+        os.system(dbus + bindings["previous"])
+
+    @classmethod
+    def loadTrack(self, track):
+        os.system(dbus + bindings["loadTrack"] + track)
+
+
+if __name__ == "__main__":
+    args = sys.argv
+    if len(args) > 1:
+        opt = args[1]
+
+        if "play" in opt:
+            spotify.play()
+        elif "pause" in opt:
+            spotify.pause()
+        elif "toggle" in opt or opt == "p":
+            spotify.toggle()
+        elif "next" in opt or opt == "n":
+            spotify.next()
+        elif "prev" in opt:
+            spotify.pause()
+        elif len(args) > 2 and "load" in opt or opt == "l":
+            spotify.loadTrack(args[2])
+        elif "help" in opt:
+            print(bindings)
+        else:
+            print("Failure -help")

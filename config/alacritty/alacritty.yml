@@ -1,8 +1,5 @@
 shell:
-    program: tmux
-    args:
-        - new
-        - -As0
+    program: tmuxNewIfNoTmux
 
 import:
     - ~/dotfiles/config/alacritty/dracula.yml

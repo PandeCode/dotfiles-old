@@ -13,26 +13,18 @@ ipc-socket ~/.i3/i3-ipc.sock
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it.
+
+bindsym $mod+Escape exec conky
+
 exec --no-startup-id nm-applet
-
-# Clipboard manager
 exec --no-startup-id clipit
-
-#exec_always --no-startup-id flashfocus
+exec —-no-startup-id alttab
+exec —-no-startup-id xflux -l 0
+exec --no-startup-id flashfocus
+exec --no-startup-id $HOME/.config/i3/background.sh
+exec --no-startup-id picom -b
 
 bindsym $mod+w exec --no-startup-id flash_window
-
-# Alt tab
-exec —-no-startup-id alttab
-
-# Bluelight filter detection
-exec —-no-startup-id xflux -l 0
-
-exec --no-startup-id $HOME/.config/i3/background.sh
-
-# Start compositor
-exec --no-startup-id picom -b
 
 # Bar
 #exec --no-startup-id $HOME/.config/polybar/launch.sh
@@ -95,6 +87,9 @@ bindsym $alt+F4 kill
 
 bindsym $mod+b exec chrome
 bindsym $mod+n exec ~/.config/i3/newWorkspace.sh
+
+bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+grave scratchpad show
 
 # change focus
 bindsym $mod+h focus left

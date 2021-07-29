@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if pgrep -x "alacritty" >/dev/null; then
+        # running
+        #echo "running"
+        tmux "$@"
+else
+        # not running
+        #echo "not"
+        tmux new -As0 "$@"
+fi
