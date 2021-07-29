@@ -9,8 +9,9 @@ rm -fr ~/.config/clangd \
         ~/.config/gtk-4.0 \
         ~/.config/i3 \
         ~/.config/i3status \
-        ~/.config/rofi \
-        ~/.config/nvim
+        ~/.config/nvim \
+        ~/.config/picom \
+        ~/.config/rofi
 
 ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
 ln -s ~/dotfiles/config/clangd ~/.config/clangd
@@ -22,4 +23,5 @@ ln -s ~/dotfiles/config/gtk-4.0 ~/.config/gtk-4.0
 ln -s ~/dotfiles/config/i3 ~/.config/i3
 ln -s ~/dotfiles/config/i3status ~/.config/i3status
 ln -s ~/dotfiles/config/nvim ~/.config/nvim
+ln -s ~/dotfiles/config/picom ~/.config/picom
 ln -s ~/dotfiles/config/rofi ~/.config/rofi
