@@ -157,15 +157,13 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Assign Workspaces:
-assign [class="Google-Chrome"] $ws1
-#assign [class="google-chrome"] $ws1
+assign [class="Google-chrome"] $ws1
 assign [class="Navigator"] $ws1
-#assign [class="firefoxdeveloperedition"]  $ws1
 
-#for window [class="google-chrome"] move container to workspace number $ws1
-#for window [class="Google-Chrome"] move container to workspace number $ws1
-#for_window [class="Navigator"] move container to workspace number $ws1
-#for_window [class="firefoxdeveloperedition"] move container to workspace number $ws1
+assign [class="neovide"] $ws3
+
+for_window [window_role="About"] floating enable
+for_window [class="Hello OpenGL"] floating enable
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
