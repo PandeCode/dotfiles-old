@@ -219,10 +219,12 @@ networkmanager-pptp 1.2.9dev+10+gb41b0d0-4
 networkmanager-vpnc 1.2.7dev+20+gdca3aea-2
 nfs-utils 2.5.4-1
 ninja 1.10.2-1
+node-gyp 8.1.0-2
 nodejs 16.5.0-1
+nodejs-nopt 5.0.0-2
 noto-color-emoji-fontconfig 1.0.0-1
 noto-fonts 20201226-2
-npm 7.17.0-1
+npm 7.20.2-1
 nss-mdns 0.14.1-3
 ntfs-3g 2017.3.23-5
 ntp 4.2.8.p15-1
@@ -269,6 +271,7 @@ s-nail 14.9.22-1
 samba 4.14.6-1
 screenfetch 3.9.1-1
 sed 4.8-1
+semver 7.3.5-2
 sfml 2.5.1-2
 shadow 4.8.1-4
 shfmt 3.3.0-1
