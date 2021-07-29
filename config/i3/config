@@ -19,6 +19,10 @@ exec --no-startup-id nm-applet
 # Clipboard manager
 exec --no-startup-id clipit
 
+#exec_always --no-startup-id flashfocus
+
+bindsym $mod+w exec --no-startup-id flash_window
+
 # Alt tab
 exec —-no-startup-id alttab
 
