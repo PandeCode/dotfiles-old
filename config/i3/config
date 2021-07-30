@@ -20,42 +20,38 @@ exec --no-startup-id i3-msg "workspace $ws1; exec /usr/bin/google-chrome"
 exec --no-startup-id i3-msg "workspace $ws2; exec i3-sensible-terminal"
 
 exec --no-startup-id nm-applet
+exec --no-startup-id picom -b
+exec --no-startup-id flashfocus
+exec —-no-startup-id xflux -l 0
 exec --no-startup-id clipit
 exec —-no-startup-id alttab
-exec —-no-startup-id xflux -l 0
-exec --no-startup-id flashfocus
 exec --no-startup-id $HOME/.config/i3/background.sh
-exec --no-startup-id picom -b
 
 bindsym $mod+w exec --no-startup-id flash_window
 
 # Bar
-#exec --no-startup-id $HOME/.config/polybar/launch.sh
 bar {
-    #i3bar_command $HOME/.config/polybar/launch.sh
-	#status_command i3status
 	status_command py3status 
 	position top
-    mode hide
-    hidden_state hide
-    modifier $mod
-  colors {
-    background #282A36
-    statusline #F8F8F2
-    separator  #44475A
-
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
-  }
+	mode hide
+	hidden_state hide
+	modifier $mod
+	colors {
+		background #282A36
+		statusline #F8F8F2
+		separator  #44475A
+		focused_workspace  #44475A #44475A #F8F8F2
+		active_workspace   #282A36 #44475A #F8F8F2
+		inactive_workspace #282A36 #282A36 #BFBFBF
+		urgent_workspace   #FF5555 #FF5555 #F8F8F2
+		binding_mode       #FF5555 #FF5555 #F8F8F2
+	}
 }
 
 
 bindsym $mod+q exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
-bindsym $mod+Tab exec rofi -show window
-bindsym $alt+F2 exec dmenu_run
+												  bindsym $mod+Tab exec rofi -show window
+												  bindsym $alt+F2 exec dmenu_run
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -163,6 +159,7 @@ set $ws10 "10"
 # Assign Workspaces:
 assign [class="Google-chrome"] $ws1
 assign [class="Navigator"] $ws1
+assign [class="zoom"] $ws3
 
 assign [class="neovide"] $ws3
 
@@ -200,33 +197,29 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# Common apps are sorted by workspace
-assign [class="Chrome$"]          → $ws1
-
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
-		bindsym h resize shrink width 10 px or 10 ppt
-				bindsym j resize grow height 10 px or 10 ppt
-				bindsym k resize shrink height 10 px or 10 ppt
-				bindsym l resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
-				bindsym Left resize shrink width 10 px or 10 ppt
-				bindsym Down resize grow height 10 px or 10 ppt
-				bindsym Up resize shrink height 10 px or 10 ppt
-				bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or $mod+r
-				bindsym Return mode "default"
-				bindsym Escape mode "default"
-				bindsym $mod+r mode "default"
+	# back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
