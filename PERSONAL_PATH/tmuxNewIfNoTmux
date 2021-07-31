@@ -1,11 +1,13 @@
-#!/bin/sh
+#!/bin/env bash
 
-if pgrep -x "alacritty" >/dev/null; then
-        # running
-        #echo "running"
-        tmux "$@"
-else
-        # not running
-        #echo "not"
+oneAlacrittyInstance() {
+        return $(pgrep alacritty | wc -w | awk '{print $1>=2}')
+}
+
+if oneAlacrittyInstance; then
+        # if there is one instance of alacritty
         tmux new -As0 "$@"
+else
+        # if there is more than one instance of alacritty
+        tmux "$@"
 fi
