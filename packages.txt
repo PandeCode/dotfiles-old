@@ -166,6 +166,8 @@ lightdm-gtk-greeter-settings 1.2.2-5
 linux-firmware 20210719.r1990.168452e-1
 linux512 5.12.19-1
 linux512-headers 5.12.19-1
+linux513 5.13.5-1
+linux513-headers 5.13.5-1
 lldb 12.0.1-1
 logrotate 3.18.0-1
 lolcat 100.0.1-1
@@ -238,6 +240,7 @@ os-prober 1.78-0.1
 p7zip 1:17.04-1
 pacman 6.0.0-2
 pamac-gtk 10.1.3-3
+pamixer 1.4-6
 patch 2.7.6-8
 pavucontrol 1:4.0-2
 pciutils 3.7.0-1
@@ -276,6 +279,8 @@ sfml 2.5.1-2
 shadow 4.8.1-4
 shfmt 3.3.0-1
 spectre-meltdown-checker 0.44-1
+spicetify-cli-git .5.0.r0.g242bde5-1
+spicetify-themes-git r160.fb3deec-1
 spotify-adblock 1:1.0.0-1
 squashfs-tools 4.5-1
 starship 0.56.0-1

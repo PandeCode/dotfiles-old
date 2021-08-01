@@ -14,18 +14,17 @@ ipc-socket ~/.i3/i3-ipc.sock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 
-bindsym $mod+Escape exec conky
-
 exec --no-startup-id i3-msg "workspace $ws1; exec /usr/bin/google-chrome"
 exec --no-startup-id i3-msg "workspace $ws2; exec i3-sensible-terminal"
 
-exec --no-startup-id nm-applet
-exec --no-startup-id picom -b
-exec --no-startup-id flashfocus
-exec —-no-startup-id xflux -l 0
+# Load Xresources
+exec --no-startup-id xrdb ~/.Xresourcesexec --no-startup-id nm-applet
 exec --no-startup-id clipit
-exec —-no-startup-id alttab
-exec --no-startup-id $HOME/.config/i3/background.sh
+exec --no-startup-id DISPLAY=:0 picom -b --experimental-backend
+exec --no-startup-id DISPLAY=:0 flashfocus
+exec —-no-startup-id DISPLAY=:0 xflux -l 0
+exec —-no-startup-id DISPLAY=:0 alttab
+exec --no-startup-id watch -n 900 ~/.config/i3/background.sh &>/dev/null 
 
 bindsym $mod+w exec --no-startup-id flash_window
 
@@ -50,35 +49,31 @@ bar {
 
 
 bindsym $mod+q exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
-												  bindsym $mod+Tab exec rofi -show window
-												  bindsym $alt+F2 exec dmenu_run
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-# Touchpad controls
-#bindsym F5 exec $HOME/.config/i3/toggletouchpad.sh # toggle touchpad
-
+bindsym $mod+Tab exec rofi -show window
+bindsym $alt+F2 exec dmenu_run
+bindsym $mod+Escape exec conky
 bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
 bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
 
-# Screen brightness controls with notification
-bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'" 
-bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@   +10%   && $refresh_i3status; dunstify 'Vol' -h int:value:$(pamixer --get-volume)"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@   -10%   && $refresh_i3status; dunstify 'Vol' -h int:value:$(pamixer --get-volume)"
+bindsym XF86AudioMute        exec --no-startup-id "pactl set-sink-mute   @DEFAULT_SINK@   toggle && $refresh_i3status; dunstify 'Mute' -h int:value:$(pamixer --get-volume)"
+bindsym XF86AudioMicMute     exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status; dunstify 'Mic Mute' -h int:value:$(pamixer --get-volume)"
 
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+# Screen brightness controls with notification
+bindsym XF86MonBrightnessUp   exec "light -A 5;dunstify 'Light:' -h int:value:$(light)"
+bindsym XF86MonBrightnessDown exec "light -U 5;dunstify 'Light:' -h int:value:$(light)"
+
+bindsym XF86AudioPlay exec "playerctl play-pause; dunstify 'Play'"
+bindsym XF86AudioNext exec "playerctl next;       dunstify 'Next'"
+bindsym XF86AudioPrev exec "playerctl previous;   dunstify 'Previous'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; workspace 1'
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -167,7 +162,6 @@ assign [class="Code-insiders"] $ws3
 
 assign [class="crx_pjibgclleladliembfgfagdaldikeohf"] $ws5
 assign [class="Spotify"] $ws5
-assign [class="spotify"] $ws5
 assign [class="vlc"] $ws5
 
 for_window [window_role="About"] floating enable

@@ -2,6 +2,7 @@
 
 rm -fr ~/.config/clangd \
         ~/.config/alacritty \
+        ~/.config/dunst \
         ~/.config/fish \
         ~/.config/fontconfig \
         ~/.config/gtk-2.0 \
@@ -14,6 +15,7 @@ rm -fr ~/.config/clangd \
         ~/.config/rofi
 
 ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
+ln -s ~/dotfiles/config/dunst ~/.config/dunst
 ln -s ~/dotfiles/config/clangd ~/.config/clangd
 ln -s ~/dotfiles/config/fish ~/.config/fish
 ln -s ~/dotfiles/config/fontconfig ~/.config/fontconfig

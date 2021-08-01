@@ -1,4 +1,3 @@
 #!/bin/env bash
 
-watch -n 900 feh --randomize --bg-fill ~/Pictures/Wallpapers/* &>/dev/null &
-disown
+DISPLAY=:0 feh --randomize --bg-fill /home/shawn/Pictures/Wallpapers/*
