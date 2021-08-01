@@ -13,21 +13,6 @@ ipc-socket ~/.i3/i3-ipc.sock
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-
-exec --no-startup-id i3-msg "workspace $ws1; exec /usr/bin/google-chrome"
-exec --no-startup-id i3-msg "workspace $ws2; exec i3-sensible-terminal"
-
-# Load Xresources
-exec --no-startup-id xrdb ~/.Xresourcesexec --no-startup-id nm-applet
-exec --no-startup-id clipit
-exec --no-startup-id DISPLAY=:0 picom -b --experimental-backend
-exec --no-startup-id DISPLAY=:0 flashfocus
-exec —-no-startup-id DISPLAY=:0 xflux -l 0
-exec —-no-startup-id DISPLAY=:0 alttab
-exec --no-startup-id watch -n 900 ~/.config/i3/background.sh &>/dev/null 
-
-bindsym $mod+w exec --no-startup-id flash_window
-
 # Bar
 bar {
 	status_command py3status 
@@ -48,9 +33,9 @@ bar {
 }
 
 
-bindsym $mod+q exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
-bindsym $mod+Tab exec rofi -show window
-bindsym $alt+F2 exec dmenu_run
+bindsym $mod+q      exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
+bindsym $mod+Tab    exec rofi -show window
+bindsym $alt+F2     exec dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 bindsym $mod+Escape exec conky
 bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
 bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
@@ -237,7 +222,6 @@ client.background       #F8F8F2
 # start (a program launcher)
 bindsym $mod+d exec rofi -combi-modi window#drun -show combi -modi combi -show-icons
 
-#"dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -247,3 +231,18 @@ bindsym $mod+d exec rofi -combi-modi window#drun -show combi -modi combi -show-i
 
 default_border pixel 1
 default_floating_border pixel 1
+
+exec --no-startup-id i3-msg "workspace $ws1; exec /usr/bin/google-chrome"
+exec --no-startup-id i3-msg "workspace $ws2; exec i3-sensible-terminal"
+
+# Load Xresources
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id nm-applet
+exec --no-startup-id clipit
+exec --no-startup-id DISPLAY=:0 picom -b --experimental-backend
+exec --no-startup-id DISPLAY=:0 flashfocus
+exec —-no-startup-id DISPLAY=:0 xflux -l 0
+exec —-no-startup-id DISPLAY=:0 alttab
+exec --no-startup-id ~/.config/i3/background.sh
+
+bindsym $mod+w exec --no-startup-id flash_window
