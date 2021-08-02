@@ -5,7 +5,6 @@ adobe-source-han-sans-cn-fonts 2.004-1
 adobe-source-han-sans-jp-fonts 2.004-1
 adobe-source-han-sans-kr-fonts 2.004-1
 adobe-source-sans-fonts 3.046-1
-alacritty 0.8.0-1
 alsa-firmware 1.2.4-2
 alsa-utils 1.2.5.1-1
 alttab-git v1.6.0.1.gf07de11-1
@@ -142,6 +141,7 @@ ipw2200-fw 3.1-8
 jdk 16.0.2-1
 jfsutils 1.1.15-7
 jre 16.0.2-1
+kitty 0.22.0-1
 leagueoflegends-git 0.11.13.r4.g72f588d-1
 less 1:590-1
 lib32-libva-intel-driver 2.4.1-1
