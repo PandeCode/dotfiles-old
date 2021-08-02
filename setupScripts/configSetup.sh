@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -fr ~/.config/clangd \
-        ~/.config/alacritty \
+        ~/.config/kitty \
         ~/.config/eww \
         ~/.config/dunst \
         ~/.config/fish \
@@ -15,7 +15,7 @@ rm -fr ~/.config/clangd \
         ~/.config/picom \
         ~/.config/rofi
 
-ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
+ln -s ~/dotfiles/config/kitty ~/.config/kitty
 ln -s ~/dotfiles/config/eww ~/.config/eww
 ln -s ~/dotfiles/config/dunst ~/.config/dunst
 ln -s ~/dotfiles/config/clangd ~/.config/clangd
