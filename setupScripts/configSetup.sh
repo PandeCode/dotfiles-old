@@ -10,7 +10,7 @@ rm -fr ~/.config/clangd \
         ~/.config/gtk-3.0 \
         ~/.config/gtk-4.0 \
         ~/.config/i3 \
-        ~/.config/i3status \
+        ~/.config/i3blocks \
         ~/.config/nvim \
         ~/.config/picom \
         ~/.config/rofi
@@ -25,7 +25,7 @@ ln -s ~/dotfiles/config/gtk-2.0 ~/.config/gtk-2.0
 ln -s ~/dotfiles/config/gtk-3.0 ~/.config/gtk-3.0
 ln -s ~/dotfiles/config/gtk-4.0 ~/.config/gtk-4.0
 ln -s ~/dotfiles/config/i3 ~/.config/i3
-ln -s ~/dotfiles/config/i3status ~/.config/i3status
+ln -s ~/dotfiles/config/i3blocks ~/.config/i3blocks
 ln -s ~/dotfiles/config/nvim ~/.config/nvim
 ln -s ~/dotfiles/config/picom ~/.config/picom
 ln -s ~/dotfiles/config/rofi ~/.config/rofi
