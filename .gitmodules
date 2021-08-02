@@ -1,9 +1,6 @@
 [submodule "tmux-config"]
 	path = tmux-config
 	url = https://github.com/PandeCode/tmux-config/
-[submodule "nvim"]
-	path = nvim
-	url = https://github.com/PandeCode/nvim-config/
 [submodule "config/nvim"]
 	path = config/nvim
 	url = https://github.com/PandeCode/nvim-config/
