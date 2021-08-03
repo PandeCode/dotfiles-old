@@ -153,7 +153,7 @@ set $ws9  "9  "
 # Assign Workspaces:
 assign [class="Google-chrome"] $ws1
 assign [class="Navigator"] $ws1
-assign [class="zoom"] $ws3
+assign [class="zoom"] $ws4
 
 assign [class="neovide"] $ws3
 assign [class="Code"] $ws3
