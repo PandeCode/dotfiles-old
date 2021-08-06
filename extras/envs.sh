@@ -9,12 +9,15 @@ export PYTHONPYCACHEPREFIX=$HOME/.cache/cpython/
 export PYTHONSTARTUP=$HOME/.pythonrc
 export PYTHON_PATH=$HOME/dev/python/PYTHON_PATH
 
-export YARN_BIN=$HOME/.yarn/bin
+export DOTFIlES=$HOME/dotfiles
 export PERSONAL_PATH=$HOME/dotfiles/PERSONAL_PATH
+
+export YARN_BIN=$HOME/.yarn/bin
 export RUBY_GEM_BIN_PATH=$HOME/.local/share/gem/ruby/3.0.0/bin
 
-export PATH=$PERSONAL_PATH:$YARN_BIN:$PATH:$RUBY_GEM_BIN_PATH
-export DOTFIlES=$HOME/dotfiles
+export GOPATH=$HOME/go
+
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PERSONAL_PATH:$YARN_BIN:$PATH:$RUBY_GEM_BIN_PATH
 
 unset FZF_DEFAULT_COMMAND
 unset FZF_DEFAULT_OPTS

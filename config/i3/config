@@ -17,42 +17,42 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Bar
 bar {
 #    verbose yes
-    status_command i3blocks
-    i3bar_command i3bar -t
-    position top
-	mode hide
-	hidden_state hide
-	modifier $mod
-    font pango:Hack, FontAwesome 12
-    strip_workspace_numbers yes
-    separator_symbol "■"
-    bindsym button4 nop
-    bindsym button5 nop
-    tray_output primary
+		status_command i3blocks
+				i3bar_command i3bar -t
+				position top
+				mode hide
+				hidden_state hide
+				modifier $mod
+				font pango:Hack, FontAwesome 12
+				strip_workspace_numbers yes
+#separator_symbol "■"
+				bindsym button4 nop
+				bindsym button5 nop
+				tray_output primary
 #    tray_output eDP1
-    tray_padding 0
-    #height $height
- 
-	#status_command py3status
-	colors {
-		background #282A36
-		statusline #F8F8F2
-		separator  #44475A
-		focused_workspace  #44475A #44475A #F8F8F2
-		active_workspace   #282A36 #44475A #F8F8F2
-		inactive_workspace #282A36 #282A36 #BFBFBF
-		urgent_workspace   #FF5555 #FF5555 #F8F8F2
-		binding_mode       #FF5555 #FF5555 #F8F8F2
-	}
+				tray_padding 0
+#height $height
+
+#status_command py3status
+				colors {
+						background #282A36
+								statusline #F8F8F2
+								separator  #44475A
+								focused_workspace  #44475A #44475A #F8F8F2
+								active_workspace   #282A36 #44475A #F8F8F2
+								inactive_workspace #282A36 #282A36 #BFBFBF
+								urgent_workspace   #FF5555 #FF5555 #F8F8F2
+								binding_mode       #FF5555 #FF5555 #F8F8F2
+				}
 }
 
 
 bindsym $mod+q      exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
-bindsym $mod+Tab    exec rofi -show window
-bindsym $alt+F2     exec dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
-bindsym $mod+Escape exec conky
-bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
-bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
+													   bindsym $mod+Tab    exec rofi -show window
+													   bindsym $alt+F2     exec dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+													   bindsym $mod+Escape exec conky
+													   bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
+													   bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -84,7 +84,7 @@ bindsym $mod+n exec ~/.config/i3/newWorkspace.sh
 
 bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
-exec --no-startup-id alacritty -e fish 
+exec --no-startup-id alacritty -e fish
 
 # change focus
 bindsym $mod+h focus left
@@ -112,7 +112,7 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 # mod+| (vertical bar)
-bindcode $mod+51 split h 
+bindcode $mod+51 split h
 
 # split in vertical orientation
 # mod+_ (underscore)
@@ -197,27 +197,27 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+		bindsym h resize shrink width 10 px or 10 ppt
+				bindsym j resize grow height 10 px or 10 ppt
+				bindsym k resize shrink height 10 px or 10 ppt
+				bindsym l resize grow width 10 px or 10 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+				bindsym Left resize shrink width 10 px or 10 ppt
+				bindsym Down resize grow height 10 px or 10 ppt
+				bindsym Up resize shrink height 10 px or 10 ppt
+				bindsym Right resize grow width 10 px or 10 ppt
 
-	# back to normal: Enter or Escape or $mod+r
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+r mode "default"
+# back to normal: Enter or Escape or $mod+r
+				bindsym Return mode "default"
+				bindsym Escape mode "default"
+				bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"

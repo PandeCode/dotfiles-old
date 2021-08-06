@@ -1,64 +1,215 @@
-separator=false
-separator_block_width=5
-border_top=0
-border_left=0
-border_right=0
-border_bottom=2
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label 
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
 
-[output]
-command=$HOME/dotfiles/scripts/monitor.sh
-interval=60
-signal=4
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+#command=/usr/lib/i3blocks/$BLOCK_NAME
 
-[updates]
-command=$HOME/dotfiles/scripts/updates.sh
-interval=60
-signal=3
-urgent=true
 
-[volume]
-label=  
-command=[[ -z "${BLOCK_BUTTON}" ]] || ( [[ "${BLOCK_BUTTON}" == "1" ]] && ((/usr/bin/pavucontrol -t 3 --name "pavucontrol-bar" || true) && $HOME/dotfiles/scripts/volume_control.py signal) || $HOME/dotfiles/scripts/volume_control.py toggle ); echo $($HOME/dotfiles/scripts/volume_control.py i3blocks)
-interval=5
-signal=1
-markup=pango
-border=#cc241d
+command=~/dotfiles/config/i3blocks/blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
 
-[brightness]
-label=  
-command=echo $(printf "%.0f " $(light))
+[ping]
 interval=10
-signal=2
-border=#d79921
 
-[temperature]
-label=  
-command=echo "$($HOME/dotfiles/scripts/temperature.sh 'Core 0') $($HOME/dotfiles/scripts/temperature.sh 'Core 1') "
-interval=5
-border=#b16286
+[network]
+label= 
+instance=wlo1
+interval=10
 
-[wireless]
-label=  
-command=[[ -z "$(iwgetid -r)" ]] || echo "$(iwgetid -r) "
-interval=2
-border=#98971a
+[bandwidth]
+instance=wlo1;in
+label= 
+interval=1
+
+[bandwidth]
+instance=wlo1;out
+label= 
+interval=1
 
 [battery]
-command=$HOME/dotfiles/scripts/battery.sh
-interval=persist
-border=#458588
+label= 
+instance=0
+interval=5
 
-[time]
-label=  
-command=echo "`date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
-interval=1
-markup=pango
-border=#928374
-separator_block_width=0
+[cpu]
+label= 
+interval=2
 
-# Guess the weather hourly
-[weather]
-command=curl -s wttr.in/Entebbe\?format=1 | sed 's/^[[:blank:]]*//; s/[[:blank:]]*$//; s/[[:blank:]]\{1,\}/ /g'
-interval=3600
-color=#A4C2F4
+[temperature]
+instance=Core
+label= 
+interval=5
 
+[load]
+label= 
+interval=10
+
+[memory]
+label= 
+instance=mem;free
+interval=30
+
+#[memory]
+#label= 
+#instance=swap;free
+#interval=30
+
+[packages]
+label= 
+interval=300
+
+[playerctl]
+label= 
+instance=rhythmbox
+interval=5
+
+[space]
+label= 
+interval=30
+
+#[bluetooth]
+#label= 
+#interval=10
+
+[audio]
+label= 
+interval=5
+color=#fff00f3
+
+[brightness]
+label= 
+interval=5
+
+[datetime]
+label= 
+interval=5
+
+#[webcam]
+#label= 
+#interval=5
+
+#[microphone]
+#label= 
+#interval=5
+
+#[usb]
+#instance=PhotoSmart
+#label= 
+#interval=10
+
+#[window]
+#command=~/.i3-blocks/blocks/scroll $BLOCK_NAME
+#label= 
+#markup=pango
+#interval=repeat
+
+#[keymap]
+#label= 
+#interval=10
+
+
+#[display]
+#label=
+#interval=5
+
+#[feed]
+#instance=http://goo.gl/bR2hcp
+#label=
+#interval=60
+
+#[firewall]
+#label=
+#interval=10
+
+#[ip-address]
+#label=
+#interval=60
+
+
+#[keystate]
+#label=
+#instance=caps
+#interval=1
+
+#[keystate]
+#label=
+#instance=num
+#interval=1
+
+#[launcher]
+#label=
+#interval=once
+
+
+#[locale]
+#label=
+#interval=once
+
+#[mail]
+#label=
+#instance=~/.gmx-private
+#interval=60
+
+#[process]
+#instance=http
+#label=
+#interval=10
+
+#[space]
+#label=
+#instance=/pub
+#interval=30
+
+
+#[ssid]
+#label=
+#interval=60
+
+#[user]
+#label=
+#interval=once
+
+#[vpn]
+#label=
+#interval=5
+
+#[weather]
+#instance=2910831
+#interval=60
+#[trash]
+#label=
+#interval=10
+
+#[cmus]
+#command=~/.i3-blocks/blocks/scroll $BLOCK_NAME
+#label=
+#markup=pango
+#interval=repeat
+
+#[countdown]
+#instance=tomorrow 05:00:00
+#label=
+#interval=1
