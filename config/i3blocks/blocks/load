@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/dotfiles/config/i3blocks/colors
+
 INSTANCE="${BLOCK_INSTANCE:-1}"
 
 URGENT_VALUE=90
@@ -11,9 +13,10 @@ if [[ "${LOAD}" != "" ]]; then
 
         echo "${LOAD}"
         echo "${LOAD}"
-        echo ""
 
-        #if [[ "${LOAD_PERC}" -ge "${URGENT_VALUE}" ]]; then
-        #exit 33
-        #fi
+        if [[ "${LOAD_PERC}" -ge "${URGENT_VALUE}" ]]; then
+        echo $RED
+else
+        echo $WHITE
+        fi
 fi

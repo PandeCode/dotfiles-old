@@ -31,14 +31,6 @@ command=~/dotfiles/config/i3blocks/blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[ping]
-interval=10
-
-[network]
-label= 
-instance=wlo1
-interval=10
-
 [bandwidth]
 instance=wlo1;in
 label= 
@@ -48,6 +40,15 @@ interval=1
 instance=wlo1;out
 label= 
 interval=1
+
+[ping]
+interval=10
+
+[network]
+label= 
+instance=wlo1
+interval=10
+
 
 [battery]
 label= 
@@ -77,9 +78,9 @@ interval=30
 #instance=swap;free
 #interval=30
 
-[packages]
-label= 
-interval=300
+#[packages]
+#label= 
+#interval=300
 
 [playerctl]
 label= 

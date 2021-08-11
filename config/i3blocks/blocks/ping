@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-is_osx() {
-        [ $(uname) == "Darwin" ]
-}
-
-is_cygwin() {
-        [[ $(uname) =~ CYGWIN ]]
-}
+source ~/dotfiles/config/i3blocks/colors
 
 is_number() {
         [[ $1 =~ ^[0-9]+$ ]]
@@ -24,10 +18,6 @@ ping_log_file="/tmp/ping.log"
 ping_result_file="/tmp/ping_result"
 ping_pid_file="/tmp/ping.pid"
 
-RED=#ff5555
-GREEN=#50fa7b
-YELLOW=#f1fa8c
-WHITE=#f8f8f2
 
 ping_not_running() {
         local pid=$(cat $ping_pid_file)
@@ -65,7 +55,7 @@ colorize_ping_value() {
         local ping=$1
         local result
 
-        if [ $ping -eq -1 ] || [ $ping -ge 1000 ]; then
+        if [ $ping == "N/A" ] || [ $ping -ge 1000 ]; then
                 result=$RED
         elif [ $ping -lt 100 ]; then
                 result=$GREEN
@@ -113,26 +103,5 @@ main() {
         echo "$ping_result"
         echo $(colorize_ping_value $ping_result)
 }
+
 main
-
-speedtestStuff() {
-        result=$(speedtest-cli --bytes --simple)
-        PING=$(echo $result | sed -n 1p | cut -d ':' -f2 | cut -d ' ' -f2)
-        DOWN=$(echo $result | sed -n 2p | cut -d ':' -f2 | cut -d ' ' -f2)
-        UP=$(echo $result | sed -n 3p | cut -d ':' -f2 | cut -d ' ' -f2)
-
-        echo  $PING" ms" $DOWN "MB/s" $UP "MB/s"
-}
-
-tracerouteStuff() {
-        #!/bin/sh
-        #default="$(ip route | grep default | head -n 1)"
-        #  #if [ ! -n "$ext_latency" ]; then
-        #  #  ext_latency="$(ping -c 1 1.1.1.1 | grep time= | awk '{print $7}' | cut -d '=' -f 2) ms"
-        #  #fi
-        #name=$(echo $default | awk '{print $5}')
-        #gateway=$(echo $default | awk '{print $3}')
-        #latency="$(ping -c 1 $gateway | grep time= | awk '{print $7}' | cut -d '=' -f 2 | awk '{print int($1+0.f)}') ms"
-        #echo $latency
-        echo  $(traceroute --max-hops=2 1.1.1.1 | grep -v "\*" | awk '/^ [1,2]/ {print int($4+0.f) "ms"}' | xargs)
-}

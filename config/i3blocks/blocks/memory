@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/dotfiles/config/i3blocks/colors
+
 # First argument is source (mem/swap), second is output value
 # Check /proc/meminfo for possible instances
 INSTANCE="${BLOCK_INSTANCE:-mem;free}"
@@ -68,8 +70,9 @@ fi
 
 echo "${MEMINFO}"
 echo "${MEMINFO}"
-echo ""
 
 if [[ "${SOURCE_PERC}" -gt "${URGENT_VALUE}" ]]; then
-  exit 33
+  echo $RED
+else
+  echo $WHITE
 fi

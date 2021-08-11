@@ -1,6 +1,9 @@
 #!/bin/bash
 # Source: http://www.onlamp.com/pub/a/linux/2000/11/16/LinuxAdmin.html
 
+source ~/dotfiles/config/i3blocks/colors
+
+
 INSTANCE="${BLOCK_INSTANCE}"
 # If you don't like you can use any other IP
 INTERFACE="$(ip route get 8.8.8.8 | grep -Po '(?<=(dev )).*(?= src)')"
@@ -69,24 +72,24 @@ if [[ "${PREV_IN}" != "" ]] && [[ "${PREV_OUT}" != "" ]]; then
   if [[ "${DISPLAY}" = "both" ]]; then
     echo "${USAGE_IN} : ${USAGE_OUT}"
     echo "${USAGE_IN} : ${USAGE_OUT}"
-    echo ""
+    echo $WHITE
     DIFF_TOTAL=$((DIFF_TOTAL+DIFF_IN))
     DIFF_TOTAL=$((DIFF_TOTAL+DIFF_OUT))
   elif [[ "${DISPLAY}" = "in" ]]; then
     echo "${USAGE_IN}"
     echo "${USAGE_IN}"
-    echo ""
+    echo $WHITE
     DIFF_TOTAL=$((DIFF_TOTAL+DIFF_IN))
   elif [[ "${DISPLAY}" = "out" ]]; then
     echo "${USAGE_OUT}"
     echo "${USAGE_OUT}"
-    echo ""
+    echo $WHITE
     DIFF_TOTAL=$((DIFF_TOTAL+DIFF_OUT))
   fi
 else
   echo "?"
   echo "?"
-  echo ""
+  echo $RED
 fi
 
 # Remember the total and idle CPU times for the next check.
@@ -94,5 +97,5 @@ echo "${BYTES_IN}" > "${PREV_FILE}"
 echo "${BYTES_OUT}" >> "${PREV_FILE}"
 
 if [[ "${DIFF_TOTAL}" -ge "${URGENT_VALUE}" ]]; then
-  exit 33
+  echo $RED
 fi
