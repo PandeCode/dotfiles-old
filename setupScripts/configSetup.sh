@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rm -fr ~/.config/clangd \
+        ~/.config/bat \
         ~/.config/kitty \
         ~/.config/eww \
         ~/.config/dunst \
@@ -16,6 +17,7 @@ rm -fr ~/.config/clangd \
         ~/.config/rofi
 
 ln -s ~/dotfiles/config/kitty ~/.config/kitty
+ln -s ~/dotfiles/config/bat ~/.config/bat
 ln -s ~/dotfiles/config/eww ~/.config/eww
 ln -s ~/dotfiles/config/dunst ~/.config/dunst
 ln -s ~/dotfiles/config/clangd ~/.config/clangd
