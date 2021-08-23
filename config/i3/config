@@ -8,8 +8,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
+exec --no-startup-id albert
 exec --no-startup-id DISPLAY=:0 picom -b --experimental-backend
-exec --no-startup-id DISPLAY=:0 flashfocus
+#exec --no-startup-id DISPLAY=:0 flashfocus
 exec —-no-startup-id DISPLAY=:0 xflux -l 0
 exec —-no-startup-id DISPLAY=:0 alttab
 exec --no-startup-id ~/.config/i3/background.sh
@@ -59,11 +60,11 @@ bar {
 
 
 bindsym $mod+q      exec ls -a ~/Pictures/Wallpapers/* | shuf -n 1 | xargs -t i3lockmore --dpms 5 --image-fill
-						       bindsym $mod+Tab    exec rofi -show window
-						       bindsym $alt+F2     exec dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
-						       bindsym $mod+Escape exec conky
-						       bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
-						       bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
+													   bindsym $mod+Tab    exec rofi -show window
+													   bindsym $alt+F2     exec dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+													   bindsym $mod+Escape exec conky
+													   bindsym Print       exec flameshot full -p $HOME/Pictures/Screenshots
+													   bindsym Shift+Print exec flameshot gui  -p $HOME/Pictures/Screenshots
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -90,6 +91,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 bindsym $alt+F4 kill
 
+bindsym $mod+m exec spotify
 bindsym $mod+b exec chrome
 bindsym $mod+e exec nautilus
 bindsym $mod+n exec ~/.config/i3/newWorkspace.sh
@@ -167,7 +169,7 @@ assign [class="neovide"]       $ws3
 assign [class="Code"]          $ws3
 assign [class="Code-insiders"] $ws3
 assign [class="zoom"]          $ws4
-assign [class="Spotify"]       $ws5
+assign [class="spotify"]       $ws5
 assign [class="vlc"]           $ws5
 
 for_window [window_role="About"]  floating enable
@@ -240,7 +242,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 # start (a program launcher)
-bindsym $mod+d exec rofi -combi-modi window#drun -show combi -modi combi -show-icons
+#bindsym $mod+d exec rofi -combi-modi window#drun -show combi -modi combi -show-icons
 
 default_border pixel 1
 default_floating_border pixel 1
