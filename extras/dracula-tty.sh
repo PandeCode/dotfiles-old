@@ -1,4 +1,4 @@
-if [ "$TERM" = "linux-not" ]; then
+if [ "$TERM" = "linux" ]; then
     printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
     printf %b '\e[37m' '\e[8]' # set default foreground to color 7 'dracula-fg'
     printf %b '\e]P0282a36'    # redefine 'black'          as 'dracula-bg'
