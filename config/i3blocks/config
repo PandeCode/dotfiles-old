@@ -31,23 +31,23 @@ command=~/dotfiles/config/i3blocks/blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[bandwidth]
-instance=wlo1;in
-label= 
-interval=1
+#[bandwidth]
+#instance=wlo1;in
+#label= 
+#interval=1
 
-[bandwidth]
-instance=wlo1;out
-label= 
-interval=1
+#[bandwidth]
+#instance=wlo1;out
+#label= 
+#interval=1
 
-[ping]
-interval=10
+#[ping]
+#interval=10
 
-[network]
-label= 
-instance=wlo1
-interval=10
+#[network]
+#label= 
+#instance=wlo1
+#interval=10
 
 
 [battery]
@@ -59,10 +59,10 @@ interval=5
 label= 
 interval=2
 
-[temperature]
-instance=Core
-label= 
-interval=5
+#[temperature]
+#instance=Core
+#label= 
+#interval=5
 
 [load]
 label= 
@@ -87,9 +87,9 @@ label=
 instance=rhythmbox
 interval=5
 
-[space]
-label= 
-interval=30
+#[space]
+#label= 
+#interval=30
 
 #[bluetooth]
 #label= 

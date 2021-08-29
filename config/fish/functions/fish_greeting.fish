@@ -1,6 +1,6 @@
 function fish_greeting
-    #fortune -o
+    fortune -o
     #neofetch
     #curl "wttr.in"
-    fortune | lolcat
+    #fortune
 end
