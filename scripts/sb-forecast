@@ -1,5 +1,6 @@
 #!/bin/sh
 
+LOCATION="Entebbe"
 # Displays todays precipication chance (☔) and daily low (🥶) and high (🌞).
 # Usually intended for the statusbar.
 
