@@ -7,9 +7,9 @@ appdirs==1.4.4
 application-utility==1.3.2
 argh==0.26.2
 argon2-cffi==21.1.0
-art==5.2
+art==5.3
 asgiref==3.4.1
-astroid==2.7.2
+astroid==2.7.3
 astunparse==1.6.3
 async-exit-stack==1.0.1
 async-generator==1.10
@@ -93,7 +93,7 @@ flatbuffers==2.0
 future==0.18.2
 fuzzywuzzy==0.18.0
 gast==0.5.2
-gdbgui==0.14.0.2
+gdbgui==0.15.0.0
 gevent==21.8.0
 gevent-websocket==0.10.1
 google-auth==2.0.1
@@ -130,7 +130,7 @@ importlib-metadata==4.8.1
 importmagic==0.1.7
 inquirer==2.7.0
 install==1.3.4
-ipykernel==6.2.0
+ipykernel==6.3.1
 ipython==7.27.0
 ipython-genutils==0.2.0
 ipywidgets==7.6.3
@@ -143,7 +143,7 @@ Js2Py==0.71
 jsbeautifier==1.14.0
 json5==0.9.6
 jsonschema==3.2.0
-jupyter-client==7.0.1
+jupyter-client==7.0.2
 jupyter-core==4.7.1
 jupyter-server==1.10.2
 jupyterlab==3.1.9
@@ -219,7 +219,7 @@ pep517==0.11.0
 pexpect==4.8.0
 pickleshare==0.7.5
 pkginfo==1.7.1
-platformdirs==2.2.0
+platformdirs==2.3.0
 pluggy==1.0.0
 ply==3.11
 polling==0.3.2
@@ -232,7 +232,7 @@ protobuf==3.17.3
 psutil==5.8.0
 ptyprocess==0.7.0
 py==1.10.0
-py3status==3.38
+py3status==3.39
 pyanime4k==2.2.7
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
@@ -273,7 +273,7 @@ PyQtWebEngine-Qt5==5.15.2
 pyrsistent==0.18.0
 pysdl==1.0.6
 PySide6==6.1.2
-PySimpleGUI==4.46.0
+PySimpleGUI==4.47.0
 pySmartDL==1.3.4
 pysmbc==1.0.23
 PySocks==1.7.1
@@ -352,7 +352,7 @@ terminado==0.11.1
 tesseract==0.1.3
 testpath==0.5.0
 thefuck==3.31
-tifffile==2021.8.8
+tifffile==2021.8.30
 toml==0.10.2
 tomli==1.2.1
 torch==1.9.0
@@ -360,7 +360,7 @@ torchvision==0.10.0
 tornado==6.1
 tox==3.24.3
 tqdm==4.62.2
-traitlets==5.0.5
+traitlets==5.1.0
 translate==3.6.1
 twine==3.4.2
 typed-ast==1.4.3
@@ -368,7 +368,7 @@ typeguard==2.12.1
 types-requests==2.25.6
 types-setuptools==57.0.2
 types-six==1.16.1
-typing-extensions==3.10.0.1
+typing-extensions==3.10.0.2
 tzlocal==3.0
 udiskie==2.3.3
 ueberzug==18.1.9

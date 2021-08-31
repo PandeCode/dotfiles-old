@@ -162,6 +162,7 @@ libreoffice-fresh 7.1.5-2
 libva-intel-driver 2.4.1-1
 libva-mesa-driver 21.1.6-1
 libva-vdpau-driver 0.7.4-5
+libxft-bgra 2.3.3.r7.7808631e-1
 licenses 20200427-1
 light 1.2.2-2
 light-locker 1.9.0-4
@@ -253,7 +254,7 @@ pavucontrol 1:4.0-2
 pciutils 3.7.0-1
 perl 5.34.0-2
 perl-file-mimeinfo 0.30-2
-picom-jonaburg-git 0.1-4
+picom 8.2-1
 pipes.sh 1.3.0-1
 pkgconf 1.7.3-1
 pkgfile 21-2
@@ -318,6 +319,7 @@ ttf-dejavu 2.37+18+g9b5d1b2f-3
 ttf-droid 20121017-10
 ttf-fira-code 5.2-1
 ttf-fira-mono 2:3.206-4
+ttf-font-awesome 5.15.4-1
 ttf-hack 3.003-3
 ttf-inconsolata 1:3.000-3
 ttf-indic-otf 0.2-11
@@ -382,6 +384,7 @@ xorg-twm 1.0.11-1
 xorg-xev 1.2.4-1
 xorg-xinit 1.4.1-3
 xorg-xkill 1.0.5-2
+xorg-xwininfo 1.1.5-2
 yarn 1.22.11-1
 yay 10.3.1-1
 ytfzf 1.2.0-1

@@ -1,29 +1,28 @@
 If:
     PathMatch: [.*\.h, .*\.c]
 CompileFlags: # Tweak the parse settings
-    Add:
-        [
-            -std=c++17,
-            -g,
-            -pthread,
-            -Wall,
-            -Wextra,
-            -pedantic,
-            -ferror-limit=0,
-            -ftemplate-backtrace-limit=0,
-        ]
----
+        Add: [
+                        -std=c99,
+                -g,
+                -pthread,
+                -Wall,
+                -Wextra,
+                -pedantic,
+                -ferror-limit=0,
+                -ftemplate-backtrace-limit=0,
+            ]
+--------------------------------------
 If:
     PathMatch: [.*\.hpp, .*\.cpp]
 CompileFlags: # Tweak the parse settings
-    Add: [
-            #-xc++,
-            -std=c99,
-            -g,
-            -pthread,
-            -Wall,
-            -Wextra,
-            -pedantic,
-            -ferror-limit=0,
-            -ftemplate-backtrace-limit=0,
-        ]
+            Add: [
+                    -xc++,
+                    -std=c++17,
+                    -g,
+                    -pthread,
+                    -Wall,
+                    -Wextra,
+                    -pedantic,
+                    -ferror-limit=0,
+                    -ftemplate-backtrace-limit=0,
+                ]
