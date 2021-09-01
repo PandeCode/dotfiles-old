@@ -16,3 +16,6 @@
 [submodule "st"]
 	path = st
 	url = https://github.com/PandeCode/st
+[submodule "st-flexipatch"]
+	path = st-flexipatch
+	url = https://github.com/PandeCode/st-flexipatch/
