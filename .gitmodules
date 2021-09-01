@@ -13,3 +13,6 @@
 [submodule "dwm-flexipatch"]
 	path = dwm-flexipatch
 	url = https://github.com/PandeCode/dwm-flexipatch/
+[submodule "st"]
+	path = st
+	url = https://github.com/PandeCode/st
