@@ -1,8 +1,9 @@
 If:
     PathMatch: [.*\.h, .*\.c]
-CompileFlags: # Tweak the parse settings
+CompileFlags:
         Add: [
-                        -std=c99,
+                -xc
+                -std=c99,
                 -g,
                 -pthread,
                 -Wall,
@@ -14,7 +15,7 @@ CompileFlags: # Tweak the parse settings
 --------------------------------------
 If:
     PathMatch: [.*\.hpp, .*\.cpp]
-CompileFlags: # Tweak the parse settings
+CompileFlags:
             Add: [
                     -xc++,
                     -std=c++17,

@@ -2,6 +2,22 @@
 # ~/.bashrc
 #
 
+#!/bin/env bash
+
+oneStInstance() {
+    return $(pgrep st | wc -w | awk '{print $1>=2}')
+}
+
+tmuxNewIfNoTmuxFn() {
+    if oneStInstance; then
+        tmux new -As0
+    else
+        tmux new
+    fi
+}
+
+if [ "$TERM" == "st-256color" ]; then tmuxNewIfNoTmuxFn && exit; fi
+
 [[ $- != *i* ]] && return
 
 colors() {

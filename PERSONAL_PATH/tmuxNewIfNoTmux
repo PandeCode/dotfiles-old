@@ -1,13 +1,17 @@
 #!/bin/env bash
 
-oneKittyInstance() {
-        return $(pgrep kitty | wc -w | awk '{print $1>=2}')
+oneStInstance() {
+        return $(pgrep st | wc -w | awk '{print $1>=2}')
 }
 
-if oneKittyInstance; then
-        # if there is one instance of kitty
-        tmux new -As0 "$@"
-else
-        # if there is more than one instance of kitty
-        tmux "$@"
-fi
+tmuxNewIfNoTmuxFn() {
+	if oneStInstance; then
+			# if there is one instance of st
+			tmux new -As0 "$@"
+	else
+			# if there is more than one instance of st
+			tmux "$@"
+	fi
+}
+
+tmuxNewIfNoTmuxFn
