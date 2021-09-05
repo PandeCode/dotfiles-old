@@ -1,5 +1,20 @@
 If:
-    PathMatch: [.*\.h, .*\.c]
+    PathMatch: [.*\.h]
+CompileFlags:
+        Add: [
+                -xc-header
+                -std=c99,
+                -g,
+                -pthread,
+                -Wall,
+                -Wextra,
+                -pedantic,
+                -ferror-limit=0,
+                -ftemplate-backtrace-limit=0,
+            ]
+-------
+If:
+    PathMatch: [.*\.c]
 CompileFlags:
         Add: [
                 -xc
@@ -12,7 +27,7 @@ CompileFlags:
                 -ferror-limit=0,
                 -ftemplate-backtrace-limit=0,
             ]
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+------
 If:
     PathMatch: [.*\.hpp, .*\.cpp]
 CompileFlags:
