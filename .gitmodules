@@ -19,3 +19,6 @@
 [submodule "st-flexipatch"]
 	path = st-flexipatch
 	url = https://github.com/PandeCode/st-flexipatch/
+[submodule "config/rofi"]
+	path = config/rofi
+	url = https://github.com/PandeCode/rofi
